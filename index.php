@@ -6,6 +6,8 @@ include_once('simple_html_dom.php');
 define("TOKEN", "weixin");
 $wechatObj = new wechatCallbackapiTest();
 
+$wechatObj->valid();
+
 switch ($_SERVER['REQUEST_METHOD']) {
   case 'POST':
     $wechatObj->responseMsg(); 
@@ -18,7 +20,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
     break;
 }
 
-//$wechatObj->valid();
+
 //$wechatObj->responseMsg();
 
 class wechatCallbackapiTest
