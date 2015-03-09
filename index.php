@@ -5,7 +5,7 @@ include_once('simple_html_dom.php');
 //define your token
 define("TOKEN", "weixin");
 $wechatObj = new wechatCallbackapiTest();
-$wechatObj->valid();
+//$wechatObj->valid();
 
 
 switch ($_SERVER['REQUEST_METHOD']) {
