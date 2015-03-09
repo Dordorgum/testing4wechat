@@ -1,11 +1,10 @@
 <?php
   
-include_once('simple_html_dom.php');
+//include_once('simple_html_dom.php');
 
 //define your token
 define("TOKEN", "weixin");
 $wechatObj = new wechatCallbackapiTest();
-
 $wechatObj->valid();
 
 /*
@@ -43,19 +42,17 @@ class wechatCallbackapiTest
 		
 		//$this->menuResult = $this->setMenu();
    	}*/
-
-	public function valid()
-    	{
+    
+    public function valid()
+    {
         $echoStr = $_GET["echostr"];
 
         //valid signature , option
         if($this->checkSignature()){
         	echo $echoStr;
-        	//exit;
-        } else {
-        	echo "fail";
+        	exit;
         }
-    	}
+    }
 
 	private function checkSignature()
 	{
