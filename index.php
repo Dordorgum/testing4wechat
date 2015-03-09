@@ -8,6 +8,7 @@ $wechatObj = new wechatCallbackapiTest();
 
 $wechatObj->valid();
 
+/*
 switch ($_SERVER['REQUEST_METHOD']) {
   case 'POST':
     $wechatObj->responseMsg(); 
@@ -18,7 +19,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
   default:
     $wechatObj->valid();  
     break;
-}
+}*/
 
 
 //$wechatObj->responseMsg();
