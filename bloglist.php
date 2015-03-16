@@ -10,7 +10,7 @@ $divs = $html->find('div[id=ctl00_PlaceHolderMain_ctl05__ControlWrapper_RichHtml
 $ahref = array();
 $atitle = array();
 
-foreach($divs->find('.ms-rteTableOddRow-5') as $tr) 
+foreach($divs->find('ms-rteTableOddRow-5') as $tr) 
 {
 	//echo $tr->next_sibling()->innertext."\n\n";
 	//$inner = $tr->next_sibling();
