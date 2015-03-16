@@ -3,10 +3,11 @@ include_once('simple_html_dom.php');
 
 $CharlesPage = get_data('http://www.hkex.com.hk/eng/newsconsul/blog/blog.htm');
 $Cpage = strip_single ("span", $CharlesPage);
-echo $Cpage;
+
 
 $html = str_get_html($Cpage);
 $divs = $html->find('div[id=ctl00_PlaceHolderMain_ctl05__ControlWrapper_RichHtmlField]',0);
+echo $divs;
 
 $ahref = array();
 $atitle = array();
