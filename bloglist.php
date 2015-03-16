@@ -7,14 +7,16 @@ $Cpage = strip_single ("span", $CharlesPage);
 
 $html = str_get_html($Cpage);
 $divs = $html->find('div[id=ctl00_PlaceHolderMain_ctl05__ControlWrapper_RichHtmlField]',0);
-echo $divs;
+//echo $divs;
 
 $ahref = array();
 $atitle = array();
 
 foreach($divs->find('ms-rteTableOddRow-5') as $tr) 
 {
-	echo $tr->next_sibling()->innertext."\n\n";
+echo $tr;
+
+	//echo $tr->next_sibling()->innertext."\n\n";
 	//$inner = $tr->next_sibling();
 	
 	foreach($tr->next_sibling()->find('td a') as $td)
