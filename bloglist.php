@@ -3,6 +3,7 @@ include_once('simple_html_dom.php');
 
 $CharlesPage = get_data('http://www.hkex.com.hk/eng/newsconsul/blog/blog.htm');
 $Cpage = strip_single ("span", $CharlesPage);
+echo $Cpage;
 
 $html = str_get_html($Cpage);
 $divs = $html->find('div[id=ctl00_PlaceHolderMain_ctl05__ControlWrapper_RichHtmlField]',0);
@@ -12,7 +13,7 @@ $atitle = array();
 
 foreach($divs->find('ms-rteTableOddRow-5') as $tr) 
 {
-	//echo $tr->next_sibling()->innertext."\n\n";
+	echo $tr->next_sibling()->innertext."\n\n";
 	//$inner = $tr->next_sibling();
 	
 	foreach($tr->next_sibling()->find('td a') as $td)
