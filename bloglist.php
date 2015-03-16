@@ -12,7 +12,7 @@ echo $divs;
 $ahref = array();
 $atitle = array();
 
-foreach($divs->find('ms-rteTableOddRow-5') as $tr) 
+foreach($divs->find('.ms-rteTableOddRow-5') as $tr) 
 {
 echo $tr;
 
