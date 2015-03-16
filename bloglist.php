@@ -7,7 +7,7 @@ $Cpage = strip_single ("span", $CharlesPage);
 
 $html = str_get_html($Cpage);
 $divs = $html->find('div[id=ctl00_PlaceHolderMain_ctl05__ControlWrapper_RichHtmlField]',0);
-//echo $divs;
+echo $divs;
 
 $ahref = array();
 $atitle = array();
