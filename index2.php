@@ -174,11 +174,17 @@ class wechatCallbackapiTest
 							<FromUserName><![CDATA[%s]]></FromUserName>
 							<CreateTime>%s</CreateTime>
 							<MsgType><![CDATA[%s]]></MsgType>
-							<ArticleCount>1</ArticleCount>
+							<ArticleCount>2</ArticleCount>
 							<Articles>
 							<item>
 							<Title><![CDATA[1]]></Title> 
 							<Description><![CDATA[desc]]></Description>
+							<PicUrl><![CDATA[http://www.hkex.com.hk/eng/newsconsul/blog/image/banner_2.jpg]]></PicUrl>
+							<Url><![CDATA[http://www.hkex.com.hk/]]></Url>
+							</item>
+							<item>
+							<Title><![CDATA[2]]></Title> 
+							<Description><![CDATA[desc2]]></Description>
 							<PicUrl><![CDATA[http://www.hkex.com.hk/eng/newsconsul/blog/image/banner_2.jpg]]></PicUrl>
 							<Url><![CDATA[http://www.hkex.com.hk/]]></Url>
 							</item>
