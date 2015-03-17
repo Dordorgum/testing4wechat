@@ -168,20 +168,26 @@ class wechatCallbackapiTest
             		if ($eventKey == "V1002_BLOG")
             		{
             			$newsTpl = "<xml>
-<ToUserName><![CDATA[%s]]></ToUserName>
-<FromUserName><![CDATA[%s]]></FromUserName>
-<CreateTime>%s</CreateTime>
-<MsgType><![CDATA[%s]]></MsgType>
-<ArticleCount>1</ArticleCount>
-<Articles>
-<item>
-<Title><![CDATA[test]]></Title>
-<Description><![CDATA[Descipriont1]]></Description>
-<PicUrl><![CDATA[]]></PicUrl>
-<Url><![CDATA[http://www.yahoo.com.hk]]></Url>
-</item>
-</Articles>
-</xml>";
+							<ToUserName><![CDATA[%s]]></ToUserName>
+							<FromUserName><![CDATA[%s]]></FromUserName>
+							<CreateTime>%s</CreateTime>
+							<MsgType><![CDATA[%s]]></MsgType>
+							<ArticleCount>2</ArticleCount>
+							<Articles>
+							<item>
+							<Title><![CDATA[23901.49]]></Title> 
+							<Description><![CDATA[恒生指数属恒生指数有限公司拥有并由其提供。恒生指数經四舍五入。]]></Description>
+							<PicUrl><![CDATA[http://www.hkex.com.hk/eng/invest/stock_data/intraday/hsi_1503171830.png]]></PicUrl>
+							<Url><![CDATA[http://sc.hkex.com.hk/TuniS/m.hkex.com.hk/sc/index.htm]]></Url>
+							</item>
+							<item>
+							<Title><![CDATA[2]]></Title> 
+							<Description><![CDATA[desc2]]></Description>
+							<PicUrl><![CDATA[http://www.hkex.com.hk/eng/newsconsul/blog/image/banner_2.jpg]]></PicUrl>
+							<Url><![CDATA[http://www.hkex.com.hk/]]></Url>
+							</item>
+							</Articles>
+							</xml>";
 
 	              		$msgType = "news";
 	                	
