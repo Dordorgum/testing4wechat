@@ -175,13 +175,13 @@ class wechatCallbackapiTest
 							<ArticleCount>2</ArticleCount>
 							<Articles>
 							<item>
-							<Title><![CDATA[23901.49  48 ( 2 )]]></Title> 
+							<Title><![CDATA[23901.49  48 ( 2&#37; )]]></Title> 
 							<Description><![CDATA[]]></Description>
 							<PicUrl><![CDATA[http://www.hkex.com.hk/eng/invest/stock_data/intraday/hsi_1503171830.png]]></PicUrl>
 							<Url><![CDATA[http://www.hkex.com.hk/eng/invest/stock_data/intraday/hsi_1503171830.png]]></Url>
 							</item>
 							<item>
-							<Title><![CDATA[%恒生指数属恒生指数有限公司拥有并由其提供。恒生指数經四舍五入。]]></Title> 
+							<Title><![CDATA[恒生指数属恒生指数有限公司拥有并由其提供。恒生指数經四舍五入。]]></Title> 
 							<Description><![CDATA[desc2]]></Description>
 							<PicUrl><![CDATA[http://www.hkex.com.hk/eng/newsconsul/blog/image/banner_2.jpg]]></PicUrl>
 							<Url><![CDATA[http://sc.hkex.com.hk/TuniS/m.hkex.com.hk/sc/index.htm]]></Url>
