@@ -167,6 +167,7 @@ class wechatCallbackapiTest
             	{
             		if ($eventKey == "V1002_BLOG")
             		{
+            		/*
             			$CharlesPage = $this->get_data('http://www.hkex.com.hk/eng/newsconsul/blog/blog.htm');
 						$Cpage = $this->strip_single("span", $CharlesPage);
 						$html = str_get_html($Cpage);
@@ -183,7 +184,7 @@ class wechatCallbackapiTest
 								array_push($atitle, $td->innertext);
 							}
 						}
-
+*/
             			$newsTplHeader = "<xml>
 							<ToUserName><![CDATA[%s]]></ToUserName>
 							<FromUserName><![CDATA[%s]]></FromUserName>
@@ -204,8 +205,12 @@ class wechatCallbackapiTest
 							</item>";
 							
 							//$itemOne = $itemOne.sprintf($newsItem, $atitle[$i], "http://www.hkex.com.hk".$ahref[$i]);
-							$aURL = "http://phpsvn4wechat.duapp.com/blogdetail/?url=".$ahref[$i];
-							$itemOne = $itemOne.sprintf($newsItem, $atitle[$i], $aURL);
+							
+							//$aURL = "http://phpsvn4wechat.duapp.com/blogdetail/?url=".$ahref[$i];
+							//$itemOne = $itemOne.sprintf($newsItem, $atitle[$i], $aURL);
+							
+							$aURL = "http://phpsvn4wechat.duapp.com/blogdetail/?url=".$i;
+							$itemOne = $itemOne.sprintf($newsItem, $i, $aURL);
 						}
 						
 						$newsTplFooter = "
