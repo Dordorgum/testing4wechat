@@ -167,60 +167,27 @@ class wechatCallbackapiTest
             	{
             		if ($eventKey == "V1002_BLOG")
             		{
-            		/*
-            			$CharlesPage = $this->get_data('http://www.hkex.com.hk/eng/newsconsul/blog/blog.htm');
-						$Cpage = $this->strip_single("span", $CharlesPage);
-						$html = str_get_html($Cpage);
-						$divs = $html->find('div[id=ctl00_PlaceHolderMain_ctl05__ControlWrapper_RichHtmlField]',0);
+            		
 
-            			$ahref = array();
-						$atitle = array();
-						
-						foreach($divs->find('.ms-rteTableOddRow-5') as $tr) 
-						{
-							foreach($tr->next_sibling()->find('td a') as $td)
-							{
-								array_push($ahref, $td->href);
-								array_push($atitle, $td->innertext);
-							}
-						}*/
-
-            			$newsTplHeader = "<xml>
+            			$newsTpl = "<xml>
 							<ToUserName><![CDATA[%s]]></ToUserName>
 							<FromUserName><![CDATA[%s]]></FromUserName>
 							<CreateTime>%s</CreateTime>
 							<MsgType><![CDATA[%s]]></MsgType>
-							<ArticleCount>4</ArticleCount>
-							<Articles>";
-						
-						$itemOne="";
-						for($i=0;$i<4;$i++)
-						{
-							$newsItem = "
+							<ArticleCount>1</ArticleCount>
+							<Articles>
 							<item>
-							<Title><![CDATA[%s]]></Title> 
-							<Description><![CDATA[]]></Description>
+							<Title><![CDATA[1]]></Title> 
+							<Description><![CDATA[desc]]></Description>
 							<PicUrl><![CDATA[http://www.hkex.com.hk/eng/newsconsul/blog/image/banner_2.jpg]]></PicUrl>
-							<Url><![CDATA[%s]]></Url>
-							</item>";
-							
-							//$itemOne = $itemOne.sprintf($newsItem, $atitle[$i], "http://www.hkex.com.hk".$ahref[$i]);
-							//$aURL = "http://phpsvn4wechat.duapp.com/blogdetail/?url=".$ahref[$i];
-							//$itemOne = $itemOne.sprintf($newsItem, $atitle[$i], $aURL);
-							
-							$aURL = "http://phpsvn4wechat.duapp.com/blogdetail/?url=".$i;
-							$itemOne = $itemOne.sprintf($newsItem, $i, $aURL);
-						}
-						
-						$newsTplFooter = "
+							<Url><![CDATA[http://www.hkex.com.hk/]]></Url>
+							</item>
 							</Articles>
-							</xml>"; 
-            	
-            			//$newsTpl = $newsTplHeader.$itemOne.$newsTplFooter;
-            			$newsTpl = 
+							</xml>";
+						
+
             			
 	              		$msgType = "news";
-	                	//$contentStr = "感谢你的讯息!\n\n请输入股票代码(如:5 或 0005) 以查询其相关信息。\n"."Event Key: ".$eventKey;
 	                	
 	                	$resultStr = sprintf($newsTpl, $fromUsername, $toUsername, $time, $msgType);
 	                	echo $resultStr;
