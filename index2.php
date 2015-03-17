@@ -175,7 +175,7 @@ class wechatCallbackapiTest
 							<ArticleCount>2</ArticleCount>
 							<Articles>
 							<item>
-							<Title><![CDATA[23901.49  48 (2%)]]></Title> 
+							<Title><![CDATA[23901.49  48 ( 2% )]]></Title> 
 							<Description><![CDATA[]]></Description>
 							<PicUrl><![CDATA[http://www.hkex.com.hk/eng/invest/stock_data/intraday/hsi_1503171830.png]]></PicUrl>
 							<Url><![CDATA[http://www.hkex.com.hk/eng/invest/stock_data/intraday/hsi_1503171830.png]]></Url>
