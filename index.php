@@ -21,7 +21,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
     break;
 }
 
-
+ 
 class wechatCallbackapiTest
 {
 	private $weChatAppID = 'wxdef363a5d71f854f';
