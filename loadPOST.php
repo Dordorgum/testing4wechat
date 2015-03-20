@@ -14,7 +14,8 @@ class wechatCallbackapiTest
     	$page_url = 'http://www.hkexnews.hk/listedco/listconews/advancedsearch/search_active_main_c.aspx';
     	//$page_url = 'http://www.hkexnews.hk/listedco/listconews/advancedsearch/search_active_main.aspx';
     	
-    	$stock_code = '00019';
+    	$stock_code = '00005';
+    	        $stock_code = $_GET["code"];
     	$stock_date = '20150321';
     	$hfStatus = 'ACM';
     	//$hfStatus = 'AEM';
