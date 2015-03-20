@@ -38,7 +38,8 @@ class wechatCallbackapiTest
 						'ctl00_txt_today' => urlencode($stock_date),
 						'ctl00_hfStatus' => urlencode($hfStatus),
 						'__VIEWSTATEENCRYPTED' => urlencode($viewstateencrypted),
-						'__VIEWSTATE' => urlencode($viewstate)
+						'__VIEWSTATE' => urlencode($viewstate),
+						'ctl00$sel_defaultDateRange' => urlencode('Year')
 				);
 				
 		foreach($fields as $key=>$value) { $fields_string .= $key.'='.$value.'&'; }
