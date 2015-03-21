@@ -38,7 +38,7 @@ class urlPOSTTest
 						'ctl00_hfStatus' => urlencode($hfStatus),
 						'ctl00$sel_defaultDateRange' => urlencode($dateRange),
 						'__VIEWSTATEENCRYPTED' => $viewstateencrypted,
-						'__VIEWSTATE' => $viewstate
+						'__VIEWSTATE' => urlencode($viewstate)
 		);
 				
 		foreach($fields as $key=>$value) { $fields_string .= $key.'='.$value.'&'; }
