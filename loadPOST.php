@@ -45,6 +45,8 @@ class urlPOSTTest
 		rtrim($fields_string, '&');
 				
 		$cPage = $this->get_data($page_url,'POST', $fields_string);
+		
+		echo $fields_string."\n\n";
 		echo $cPage;
     }
 
