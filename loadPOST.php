@@ -51,6 +51,10 @@ class urlPOSTTest
 	private function get_data($url, $method, $string) {
 		$ch = curl_init();
 		$timeout = 5;
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+		curl_setopt($ch, CURLOPT_VERBOSE, 1);
+		curl_setopt($ch, CURLOPT_HEADER, 1);
+
 		curl_setopt($ch, CURLOPT_URL, $url);
 		curl_setopt($ch, CURLOPT_POST, count($fields));
 		curl_setopt($ch, CURLOPT_POSTFIELDS, $string);
@@ -58,8 +62,13 @@ class urlPOSTTest
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 		curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
 		$data = curl_exec($ch);
+		
+		$header_size = curl_getinfo($ch, CURLINFO_HEADER_SIZE);
+		$header = substr($response, 0, $header_size);
+		$body = substr($response, $header_size);
+		
 		curl_close($ch);
-		return $data;
+		return $header."\n\n\n\n".$data;
 	}
 
 }
