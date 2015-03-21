@@ -33,10 +33,10 @@ class urlPOSTTest
 		
 			
 		$fields = array(
-						'ctl00$txt_stock_code' => urlencode($stock_code),
-						'ctl00_txt_today' => urlencode($stock_date),
-						'ctl00_hfStatus' => urlencode($hfStatus),
-						'ctl00$sel_defaultDateRange' => urlencode($dateRange),
+						'ctl00$txt_stock_code' => $stock_code,
+						'ctl00_txt_today' => $stock_date,
+						'ctl00_hfStatus' => $hfStatus,
+						'ctl00$sel_defaultDateRange' => $dateRange,
 						'__VIEWSTATEENCRYPTED' => $viewstateencrypted,
 						'__VIEWSTATE' => urlencode($viewstate)
 		);
