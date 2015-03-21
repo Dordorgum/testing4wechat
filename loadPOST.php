@@ -38,13 +38,13 @@ class urlPOSTTest
 						'ctl00_hfStatus' => $hfStatus,
 						'ctl00$sel_defaultDateRange' => $dateRange,
 						'__VIEWSTATEENCRYPTED' => $viewstateencrypted,
-						'__VIEWSTATE' => urlencode($viewstate)
+						'__VIEWSTATE' => $viewstate
 		);
 				
 		foreach($fields as $key=>$value) { $fields_string .= $key.'='.$value.'&'; }
 		rtrim($fields_string, '&');
 				
-		$cPage = $this->get_data($page_url,'POST', $fields_string);
+		$cPage = $this->get_data($page_url,'POST', urlencode($fields_string));
 		echo $cPage;
     }
 
