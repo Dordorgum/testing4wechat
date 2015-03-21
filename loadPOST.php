@@ -64,11 +64,11 @@ class urlPOSTTest
 		$data = curl_exec($ch);
 		
 		$header_size = curl_getinfo($ch, CURLINFO_HEADER_SIZE);
-		$header = substr($response, 0, $header_size);
-		$body = substr($response, $header_size);
+		$header = substr($data, 0, $header_size);
+		$body = substr($data, $header_size);
 		
 		curl_close($ch);
-		return $header."\n\n\n\n".$data;
+		return $data;
 	}
 
 }
