@@ -54,6 +54,7 @@ class urlPOSTTest
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 		curl_setopt($ch, CURLOPT_VERBOSE, 1);
 		curl_setopt($ch, CURLOPT_HEADER, 1);
+		curl_setopt($ch, CURLINFO_HEADER_OUT, true);
 
 		curl_setopt($ch, CURLOPT_URL, $url);
 		curl_setopt($ch, CURLOPT_POST, count($fields));
@@ -63,12 +64,14 @@ class urlPOSTTest
 		curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
 		$data = curl_exec($ch);
 		
-		$header_size = curl_getinfo($ch, CURLINFO_HEADER_SIZE);
-		$header = substr($data, 0, $header_size);
-		$body = substr($data, $header_size);
+		$headerSent = curl_getinfo($ch, CURLINFO_HEADER_OUT ); 
+
+		//$header_size = curl_getinfo($ch, CURLINFO_HEADER_SIZE);
+		//$header = substr($data, 0, $header_size);
+		//$body = substr($data, $header_size);
 		
 		curl_close($ch);
-		return $data;
+		return "Request Header:\n\n".$headerSent."\n\n\n\n\n\n\n".$data;
 	}
 
 }
