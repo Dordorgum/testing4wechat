@@ -15,7 +15,7 @@ class wechatCallbackapiTest
 		
 		if (strcmp($menuResult, "ok") == 0) {
 			//echo "equal";
-			echo $this->getMenuWithToken($weChatAccessToken);
+			echo json_encode($this->getMenuWithToken($weChatAccessToken), JSON_PRETTY_PRINT);
 		} else {
 			echo "error = ". $menuResult;
 		}
@@ -43,9 +43,7 @@ class wechatCallbackapiTest
 	private function getMenuWithToken($accessToken)
 	{
 		$url = 'https://api.weixin.qq.com/cgi-bin/menu/get?access_token='.$accessToken;
-		
-		echo $url;
-		
+				
 		$ch = curl_init($url);
 		$timeout = 3;
 		
