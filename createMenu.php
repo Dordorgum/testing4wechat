@@ -1,8 +1,7 @@
 <?php
 
 $wechatObj = new wechatCallbackapiTest();
-//$wechatObj->createMenu();
-$wechatObj->getMenu();
+$wechatObj->createMenu();
 
 class wechatCallbackapiTest
 {
@@ -15,20 +14,13 @@ class wechatCallbackapiTest
 		$menuResult = $this->setMenuWithToken($weChatAccessToken);
 		
 		if (strcmp($menuResult, "ok") == 0) {
-			echo "equal";
-			$this->getMenuWithToken($weChatAccessToken);
+			//echo "equal";
+			echo $this->getMenuWithToken($weChatAccessToken);
 		} else {
 			echo "error = ". $menuResult;
 		}
    	}
-   	
-   	function getMenu()
-   	{
-   		$token = $this->getAccessToken();
-   		echo "token=".$token."\n";
-   		$this->getMenuWithToken($token);
-   	}
-	
+
 	private function getAccessToken() {
 	
 		$url = 'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid='.$this->weChatAppID.'&secret='.$this->weChatAppSecret;
@@ -62,10 +54,8 @@ class wechatCallbackapiTest
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
 		$data = curl_exec($ch);
-		$json= json_decode($data);
 		
-		echo "data=".$data."\n";
-		echo "json=".$json->{'errmsg'};
+		return $data;
 	}
 
 	private function setMenuWithToken($accessToken)
