@@ -17,8 +17,12 @@ switch ( $_GET["action"]) {
 
 class wechatCallbackapiTest
 {
-	private $weChatAppID = 'wx6a6eaf0c4456af06';
-	private $weChatAppSecret = '9fb1078ca64247ffc09b74cd011077a1';
+	//private $weChatAppID = 'wx6a6eaf0c4456af06';
+	//private $weChatAppSecret = '9fb1078ca64247ffc09b74cd011077a1';
+	
+	//WeChat Dev Account
+	private $weChatAppID = 'wxdef363a5d71f854f';
+	private $weChatAppSecret = 'b5a9680c89589d34a1b162726a3cd0b6';
 	
 	function createMenu() 
 	{
@@ -81,48 +85,91 @@ class wechatCallbackapiTest
 	
 $stringMenu='
 {
-    "button": [
-        {
-            "name": "新闻资料", 
-            "sub_button": [ 
-            	{
-                    "type": "view", 
-                    "name": "新闻稿", 
-                    "url": "http://phpsvn4wechat.duapp.com/press/",
-                    "sub_button": [ ]
-                }, 
-                {
-                    "type": "click", 
-                    "name": "小加网志", 
-                    "key": "V1002_BLOG", 
-                    "sub_button": [ ]
-                }
-            ]
-        }, 
-        {
-            "type": "view", 
-            "name": "沪港通", 
-            "url": "http://www.hkex.com.hk/chi/csm/homepage.asp?LangCode=tc", 
-            "sub_button": [ ]
-        }, 
-        {
-            "name": "额度查询", 
-            "sub_button": [
-                {
-                    "type": "click", 
-                    "name": "沪港通额度", 
-                    "key": "V3001_QUOTA", 
-                    "sub_button": [ ]
-                }, 
-                {
-                    "type": "click", 
-                    "name": "股价及指数", 
-                    "key": "V3002_STOCK", 
-                    "sub_button": [ ]
-                }
-            ]
-        }
-    ]
+    "menu": {
+        "button": [
+            {
+                "name": "沪港通", 
+                "sub_button": [
+                    {
+                        "type": "click", 
+                        "name": "沪港通成交", 
+                        "key": "V1001_deal", 
+                        "sub_button": [ ]
+                    }, 
+                    {
+                        "type": "click", 
+                        "name": "活跃股票", 
+                        "key": "V1002_actstock", 
+                        "sub_button": [ ]
+                    }, 
+                    {
+                        "type": "click", 
+                        "name": "恒生指数", 
+                        "key": "V1003_index", 
+                        "sub_button": [ ]
+                    }, 
+                    {
+                        "type": "view", 
+                        "name": "沪港通资料", 
+                        "url": "https://sc.hkex.com.hk/gb/www.hkex.com.hk/chi/csm/chinaConnect.asp?LangCode=tc", 
+                        "sub_button": [ ]
+                    }, 
+                    {
+                        "type": "view", 
+                        "name": "港股通大讲堂", 
+                        "url": "http://220.246.12.161/wechat/forum.aspx", 
+                        "sub_button": [ ]
+                    }
+                ]
+            }, 
+            {
+                "name": "证券查询", 
+                "sub_button": [
+                    {
+                        "type": "click", 
+                        "name": "证券行情查询", 
+                        "key": "V2001_stockinfo", 
+                        "sub_button": [ ]
+                    }, 
+                    {
+                        "type": "click", 
+                        "name": "上市公司公告", 
+                        "key": "V2002_companyinfo", 
+                        "sub_button": [ ]
+                    }, 
+                    {
+                        "type": "view", 
+                        "name": "港股通证券名单", 
+                        "url": "http://www.sse.com.cn/marketservices/hkexsc/disclo/eligible/", 
+                        "sub_button": [ ]
+                    }
+                ]
+            }, 
+            {
+                "name": "新闻资讯", 
+                "sub_button": [
+                    {
+                        "type": "view", 
+                        "name": "交易所公布 ", 
+                        "url": "http://220.246.12.161/wechat/newslist.aspx", 
+                        "sub_button": [ ]
+                    }, 
+                    {
+                        "type": "click", 
+                        "name": "小加网志", 
+                        "key": "V1002_BLOG", 
+                        "sub_button": [ ]
+                    }, 
+                    {
+                        "type": "view", 
+                        "name": "交易日曆", 
+                        "url": "http://220.246.12.161/wechat/calendar.aspx", 
+                        "sub_button": [ ]
+                    }
+                ]
+            }
+        ]
+    }
 }
 ';
 
