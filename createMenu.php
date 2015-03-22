@@ -14,7 +14,8 @@ class wechatCallbackapiTest
 		//echo "access token = ".$this->weChatAccessToken."\n";
 		
 		$menuResult = $this->setMenu($this->getAccessToken());
-		
+		echo "menu = ". $menuResult;
+
 		
 		if (strcmp($menuResult, "ok") == 0) {
 			echo "equal";
