@@ -16,9 +16,8 @@ class wechatCallbackapiTest
 		if (strcmp($menuResult, "ok") == 0) {
 			//echo "equal";
 			$result = $this->getMenuWithToken($weChatAccessToken);
-			
 			echo $result;
-			echo json_encode($result, JSON_PRETTY_PRINT);
+			//echo json_encode($result, JSON_PRETTY_PRINT);
 		} else {
 			echo "error = ". $menuResult;
 		}
@@ -55,9 +54,9 @@ class wechatCallbackapiTest
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
 		$data = curl_exec($ch);
-		$json= json_decode($data,true);
+		//$json= json_decode($data,true);
 		
-		return $json;
+		return $data;
 	}
 
 	private function setMenuWithToken($accessToken)
