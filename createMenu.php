@@ -16,12 +16,12 @@ class wechatCallbackapiTest
 		$menuResult = $this->setMenu($this->getAccessToken());
 		echo "menu = ". $menuResult;
 
-		
+		/*
 		if (strcmp($menuResult, "ok") == 0) {
 			echo "equal";
 		} ele {
 			echo "error = ". $menuResult;
-		}
+		}*/
 		
    	}
 	
