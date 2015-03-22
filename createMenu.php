@@ -26,16 +26,23 @@ class wechatCallbackapiTest
 	
 		$url = 'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid='.$this->weChatAppID.'&secret='.$this->weChatAppSecret;
 	
+	echo "url = ".$url."\n";
+	echo $this->weChatAppID."\n";
+	
 		$ch = curl_init();
-		$timeout = 5;
+		$timeout = 3;
+		
 		curl_setopt($ch, CURLOPT_URL, $url);
 		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 		curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
 		$data = curl_exec($ch);
+		$json= json_decode($data);
+		
 		curl_close($ch);
 	
-		$json= json_decode($data);
+		echo "data = ".$data."\n";
+		echo "json = ".$json."\n";
 	
 		return $json['access_token'];
 	}
