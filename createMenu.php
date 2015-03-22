@@ -12,11 +12,11 @@ class wechatCallbackapiTest
 	function createMenu() 
 	{
 		$weChatAccessToken= $this->getAccessToken();		
-		$menuResult = $this->setMenu($weChatAccessToken);
+		$menuResult = $this->setMenuWithToken($weChatAccessToken);
 		
 		if (strcmp($menuResult, "ok") == 0) {
 			echo "equal";
-			$this->getMenu( $weChatAccessToken);
+			$this->getMenuWithToken($weChatAccessToken);
 		} else {
 			echo "error = ". $menuResult;
 		}
@@ -24,7 +24,7 @@ class wechatCallbackapiTest
    	
    	function getMenu()
    	{
-   		$this->getMenu($this->getAccessToken());
+   		$this->getMenuWithToken($this->getAccessToken());
    	}
 	
 	private function getAccessToken() {
@@ -46,7 +46,7 @@ class wechatCallbackapiTest
 		return $json['access_token'];
 	}
 	
-	private function getMenu($accessToken)
+	private function getMenuWithToken($accessToken)
 	{
 		$url = 'https://api.weixin.qq.com/cgi-bin/menu/get?access_token=%s'.$accessToken;
 		
@@ -64,7 +64,7 @@ class wechatCallbackapiTest
 		echo "json=".$json->{'errmsg'};
 	}
 
-	private function setMenu($accessToken)
+	private function setMenuWithToken($accessToken)
 	{
 	
 $stringMenu='
