@@ -1,7 +1,19 @@
 <?php
 
 $wechatObj = new wechatCallbackapiTest();
-$wechatObj->createMenu();
+//$wechatObj->createMenu();
+
+switch ( $_GET["action"]) {
+  case 'create':
+    $wechatObj->createMenu(); 
+    break;
+  case 'get':
+   	$wechatObj->getCurrentMenu(); 
+    break;
+  default:
+    $wechatObj->getCurrentMenu();  
+    break;
+}
 
 class wechatCallbackapiTest
 {
@@ -21,6 +33,11 @@ class wechatCallbackapiTest
 		} else {
 			echo "error = ". $menuResult;
 		}
+   	}
+   	
+   	function getCurrentMenu() 
+	{	
+		echo $this->getMenuWithToken($this->getAccessToken());
    	}
 
 	private function getAccessToken() {
