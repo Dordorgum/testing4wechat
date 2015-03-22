@@ -12,35 +12,33 @@ class wechatCallbackapiTest
 	
 	function createMenu() 
 	{
-		$url = 'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid='.$this->weChatAppID.'&secret='.$this->weChatAppSecret;
-		$json= json_decode($this->get_data($url));
-		$this->weChatAccessToken=$json->{'access_token'};
+
+		$this->weChatAccessToken= $this->getAccessToken();
 		
-		echo "access token = ".$this->weChatAccessToken;
+		echo "access token = ".$this->weChatAccessToken."\n";
 		
 		$this->menuResult = $this->setMenu();
 		
 		echo "menu result = ". $this->menuResult;
    	}
 	
-	private function get_data($url, $method='GET') {
+	private function getAccessToken() {
+	
+		$url = 'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid='.$this->weChatAppID.'&secret='.$this->weChatAppSecret;
+	
 		$ch = curl_init();
 		$timeout = 5;
 		curl_setopt($ch, CURLOPT_URL, $url);
-		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, $method);
+		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 		curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
 		$data = curl_exec($ch);
 		curl_close($ch);
-		return $data;
-	}
 	
-	private function strip_single($tag,$string)
-	{
-		$string=preg_replace('/<'.$tag.'[^>]*>/i', '', $string);
-		$string=preg_replace('/<\/'.$tag.'>/i', '', $string);
-		return $string;
-	} 
+		$json= json_decode($data);
+	
+		return $json->{'access_token'};
+	}
 
 	private function setMenu()
 	{
@@ -105,9 +103,7 @@ $stringMenu='
 		$resultJson = curl_exec($ch);
 		
 		$resultObj = json_decode($resultJson,true);
-		
-		echo $resultObj;
-		
+
 		return $resultObj['errmsg'];
 	}
 	
