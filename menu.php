@@ -85,7 +85,6 @@ class wechatCallbackapiTest
 	
 $stringMenu='
 {
-    "menu": {
         "button": [
             {
                 "name": "沪港通", 
@@ -170,7 +169,6 @@ $stringMenu='
             }
         ]
     }
-}
 ';
 
 		$post_url = sprintf("https://api.weixin.qq.com/cgi-bin/menu/create?access_token=%s",$accessToken);
