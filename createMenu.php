@@ -10,18 +10,15 @@ class wechatCallbackapiTest
 	
 	function createMenu() 
 	{
-		$weChatAccessToken= $this->getAccessToken();
-		//echo "access token = ".$this->weChatAccessToken."\n";
-		
+		$weChatAccessToken= $this->getAccessToken();		
 		$menuResult = $this->setMenu($weChatAccessToken);
 		
 		if (strcmp($menuResult, "ok") == 0) {
 			echo "equal";
-			$this->getMenu($weChatAccessToken);
+			$this->getMenu( $this->getAccessToken());
 		} else {
 			echo "error = ". $menuResult;
 		}
-		
    	}
 	
 	private function getAccessToken() {
