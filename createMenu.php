@@ -17,9 +17,9 @@ class wechatCallbackapiTest
 		
 		echo "access token = ".$this->weChatAccessToken."\n";
 		
-		$this->menuResult = $this->setMenu();
+		//$this->menuResult = $this->setMenu();
 		
-		echo "menu result = ". $this->menuResult;
+		//echo "menu result = ". $this->menuResult;
    	}
 	
 	private function getAccessToken() {
@@ -37,7 +37,7 @@ class wechatCallbackapiTest
 	
 		$json= json_decode($data);
 	
-		return $json->{'access_token'};
+		return $json['access_token'];
 	}
 
 	private function setMenu()
