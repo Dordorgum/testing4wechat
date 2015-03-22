@@ -7,27 +7,20 @@ class wechatCallbackapiTest
 {
 	private $weChatAppID = 'wx6a6eaf0c4456af06';
 	private $weChatAppSecret = '9fb1078ca64247ffc09b74cd011077a1';
-	private $weChatAccessToken;
-	private $menuResult;
 	
 	function createMenu() 
 	{
-
-		$this->weChatAccessToken= $this->getAccessToken();
+		//$this->weChatAccessToken= $this->getAccessToken();
+		//echo "access token = ".$this->weChatAccessToken."\n";
 		
-		echo "access token = ".$this->weChatAccessToken."\n";
-		
-		//$this->menuResult = $this->setMenu();
-		
-		//echo "menu result = ". $this->menuResult;
+		$menuResult = $this->setMenu($this->getAccessToken());
+		echo "menu result = ". $menuResult;
    	}
 	
 	private function getAccessToken() {
 	
 		$url = 'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid='.$this->weChatAppID.'&secret='.$this->weChatAppSecret;
-	
-	echo "url = ".$url."\n";
-	
+
 		$ch = curl_init();
 		$timeout = 3;
 		
@@ -40,13 +33,10 @@ class wechatCallbackapiTest
 		
 		curl_close($ch);
 	
-		echo "data = ".$data."\n";
-		echo "access token = ".$json['access_token']."\n";
-	
 		return $json['access_token'];
 	}
 
-	private function setMenu()
+	private function setMenu($accessToken)
 	{
 	
 $stringMenu='
@@ -96,7 +86,7 @@ $stringMenu='
 }
 ';
 
-		$post_url = sprintf("https://api.weixin.qq.com/cgi-bin/menu/create?access_token=%s",$this->weChatAccessToken);
+		$post_url = sprintf("https://api.weixin.qq.com/cgi-bin/menu/create?access_token=%s",$accessToken);
 		
 		$ch = curl_init($post_url);
 		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
@@ -106,14 +96,11 @@ $stringMenu='
 			'Content-Type: application/json',                                      
 			'Content-Length: '.strlen($stringMenu))
 		);
-		$resultJson = curl_exec($ch);
-		
-		$resultObj = json_decode($resultJson,true);
+		$data = curl_exec($ch);
+		$resultObj = json_decode($data,true);
 
 		return $resultObj['errmsg'];
 	}
-	
-	
 
 }
 
