@@ -24,7 +24,9 @@ class wechatCallbackapiTest
    	
    	function getMenu()
    	{
-   		$this->getMenuWithToken($this->getAccessToken());
+   		$token = $this->getAccessToken();
+   		echo "token=".$token."\n";
+   		$this->getMenuWithToken($token);
    	}
 	
 	private function getAccessToken() {
@@ -49,6 +51,8 @@ class wechatCallbackapiTest
 	private function getMenuWithToken($accessToken)
 	{
 		$url = 'https://api.weixin.qq.com/cgi-bin/menu/get?access_token=%s'.$accessToken;
+		
+		echo $url;
 		
 		$ch = curl_init($url);
 		$timeout = 3;
