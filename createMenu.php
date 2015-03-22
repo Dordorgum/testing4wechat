@@ -1,7 +1,8 @@
 <?php
 
 $wechatObj = new wechatCallbackapiTest();
-$wechatObj->createMenu();
+//$wechatObj->createMenu();
+$wechatObj->getMenu();
 
 class wechatCallbackapiTest
 {
@@ -15,10 +16,15 @@ class wechatCallbackapiTest
 		
 		if (strcmp($menuResult, "ok") == 0) {
 			echo "equal";
-			$this->getMenu( $this->getAccessToken());
+			$this->getMenu( $weChatAccessToken);
 		} else {
 			echo "error = ". $menuResult;
 		}
+   	}
+   	
+   	function getMenu()
+   	{
+   		$this->getMenu($this->getAccessToken());
    	}
 	
 	private function getAccessToken() {
@@ -55,7 +61,7 @@ class wechatCallbackapiTest
 		$json= json_decode($data);
 		
 		echo "data=".$data."\n";
-		echo "json=".$json;
+		echo "json=".$json->{'errmsg'};
 	}
 
 	private function setMenu($accessToken)
