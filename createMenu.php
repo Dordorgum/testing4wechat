@@ -50,7 +50,7 @@ class wechatCallbackapiTest
 	
 	private function getMenuWithToken($accessToken)
 	{
-		$url = 'https://api.weixin.qq.com/cgi-bin/menu/get?access_token=%s'.$accessToken;
+		$url = 'https://api.weixin.qq.com/cgi-bin/menu/get?access_token='.$accessToken;
 		
 		echo $url;
 		
