@@ -9,8 +9,7 @@ class urlGETTest
     public function load()
     {
     	$searchString = $_GET["text"];
-    	$csv = iconv("UTF-8","GB2312",$searchString);
-		echo "csv=".$csv."\n\n";
+		echo "encoded=".urlencode($searchString)."\n\n";
     	echo "text=".$searchString."\n\n";
 		
     	$page_url = 'http://sc.hkex.com.hk/gb/www.hkex.com.hk/chi/invest/company/excompany_page_c.asp?QueryString='.$searchString;	
