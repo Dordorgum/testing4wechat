@@ -8,9 +8,10 @@ class urlGETTest
 
     public function load()
     {
-    	$searchString = 'tech';
-    	$page_url = 'http://sc.hkex.com.hk/gb/www.hkex.com.hk/chi/invest/company/excompany_page_c.asp?QueryString='.$searchString;
-				
+    	$searchString = mb_convert_encoding($_GET["text"], "GB2312");
+    	$page_url = 'http://sc.hkex.com.hk/gb/www.hkex.com.hk/chi/invest/company/excompany_page_c.asp?QueryString='.$searchString;	
+		echo "url=".$page_url."\n\n";
+		
 		$cPage = $this->get_data($page_url);
 		echo $cPage;
     }
