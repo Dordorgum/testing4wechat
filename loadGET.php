@@ -13,7 +13,7 @@ class urlGETTest
 		echo "convert=".urlencode(iconv('utf-8','gb2312',$searchString))."\n\n";
     	echo "text=".$searchString."\n\n";
 		
-    	$page_url = 'http://sc.hkex.com.hk/gb/www.hkex.com.hk/chi/invest/company/excompany_page_c.asp?QueryString='.$searchString;	
+    	$page_url = 'http://sc.hkex.com.hk/gb/www.hkex.com.hk/chi/invest/company/excompany_page_c.asp?QueryString='.urlencode(iconv('utf-8','gb2312',$searchString));	
 		echo "url=".$page_url."\n\n";
 		
 		$cPage = $this->get_data($page_url);
