@@ -8,7 +8,7 @@ class urlGETTest
 
     public function load()
     {
-    	$searchString = mb_convert_encoding($_GET["text"], "GB2312");
+    	$searchString = $_GET["text"];
     	echo "text=".$searchString."\n\n";
 		
     	$page_url = 'http://sc.hkex.com.hk/gb/www.hkex.com.hk/chi/invest/company/excompany_page_c.asp?QueryString='.$searchString;	
