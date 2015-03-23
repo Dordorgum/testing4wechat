@@ -10,7 +10,7 @@ class urlGETTest
     {
     	$searchString = $_GET["text"];
 		echo "encoded=".urlencode($searchString)."\n\n";
-		echo "convert=".mb_convert_encoding($searchString, "GB2312", "UTF-8");
+		echo "convert=".urlencode(iconv('utf-8','gb2312',$searchString))."\n\n";
     	echo "text=".$searchString."\n\n";
 		
     	$page_url = 'http://sc.hkex.com.hk/gb/www.hkex.com.hk/chi/invest/company/excompany_page_c.asp?QueryString='.$searchString;	
