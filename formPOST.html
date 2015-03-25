@@ -11,7 +11,7 @@
 </head>
 
 <body>
-<form action="http://testing4wechat.herokuapp.com/" method="post" id="wechatForm">
+<form action="/responsePOST.php" method="post" id="wechatForm">
 	<input type="submit" value="Submit Form">
 </form>
 <div id="result"></div>
@@ -23,7 +23,7 @@ $("#wechatForm").submit(function( event ) {
   	event.preventDefault();
 
 	var url = $(this).attr( "action" );
-  	$.post( url, { data: "test" } ).done(function( data ) {
+  	$.post( url, {name:"ravi",age:"31"} ).done(function( data ) {
     	//var content = $( data ).find( "#content" );
     	//$( "#result" ).empty().append( content );
     	alert("Data: " + data);
