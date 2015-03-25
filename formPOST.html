@@ -23,10 +23,11 @@ $("#wechatForm").submit(function( event ) {
   	event.preventDefault();
 
 	var url = $(this).attr( "action" );
-  	$.post( url, "abc" ).done(function( data ) {
+	
+  	$.post( url, "abc" ).done(function( response ) {
     	//var content = $( data ).find( "#content" );
     	//$( "#result" ).empty().append( content );
-    	alert("Data: " + data);
+    	alert("Data: " + response);
   });
 });
 </script>
