@@ -23,7 +23,7 @@ $("#wechatForm").submit(function( event ) {
   	event.preventDefault();
 
 	var url = $(this).attr( "action" );
-  	$.post( url, {name:"ravi",age:"31"} ).done(function( data ) {
+  	$.post( url, "abc" ).done(function( data ) {
     	//var content = $( data ).find( "#content" );
     	//$( "#result" ).empty().append( content );
     	alert("Data: " + data);
