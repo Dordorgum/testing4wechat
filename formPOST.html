@@ -1,0 +1,35 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" xml:lang="en-US" lang="en-US">
+<head>
+	<title>香港交易所新聞稿</title>
+	<meta charset="utf-8" />
+	
+	<!-- Javascript -->	
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+
+
+</head>
+
+<body>
+<form action="http://testing4wechat.herokuapp.com/" method="post" id="wechatForm">
+	<input type="submit" value="Submit Form">
+</form>
+<div id="result"></div>
+
+<script>
+$("#wechatForm").submit(function( event ) {
+ 	alert("calling jquery");
+  	// Stop form from submitting normally
+  	event.preventDefault();
+
+	var url = $(this).attr( "action" );
+  	$.post( url, { data: "test" } ).done(function( data ) {
+    	//var content = $( data ).find( "#content" );
+    	//$( "#result" ).empty().append( content );
+    	alert("Data: " + data);
+  });
+});
+</script>
+</body>
+
+</html>
