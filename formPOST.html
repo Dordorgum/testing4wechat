@@ -6,12 +6,11 @@
 	
 	<!-- Javascript -->	
 	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-
-
 </head>
 
 <body>
-<form action="/responsePOST.php" method="post" id="wechatForm">
+<form action="/responsePOST.php" method="post">
+	<input type="hidden" name="data" value="test data">
 	<input type="submit" value="Submit Form">
 </form>
 <div id="result"></div>
