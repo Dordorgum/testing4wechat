@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+
+<head>
+  <script src="Script/shared/util.js"></script>
+  <script src="Script/display/api.js"></script>
+  <script src="Script/display/metadata.js"></script>
+  <script src="Script/display/canvas.js"></script>
+  <script src="Script/display/webgl.js"></script>
+  <script src="Script/display/pattern_helper.js"></script>
+  <script src="Script/display/font_loader.js"></script>
+  <script src="Script/display/annotation_helper.js"></script>
+
+  <script>
+    PDFJS.workerSrc = 'Script/worker_loader.js';
+  </script>
+  <script src="hello.js"></script>
+</head>
+
+<body>
+  <canvas id="the-canvas" style="border:1px solid black;"/>
+</body>
+
+</html>
